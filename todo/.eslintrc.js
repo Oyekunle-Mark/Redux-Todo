@@ -29,6 +29,7 @@ module.exports = {
     "object-curly-newline": 0,
     "curly": 0,
     "nonblock-statement-body-position": 0,
-    "react/button-has-type": 0
+    "react/button-has-type": 0,
+    "operator-linebreak": 0
   }
 };

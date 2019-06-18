@@ -15,7 +15,7 @@ const StyledForm = styled.form`
   h3 {
     color: #f072a9;
     margin: 0 0 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-size: 24px;
   }
 
@@ -49,7 +49,15 @@ function TodoForm({ createTodo }) {
 
   const submitTodo = e => {
     e.preventDefault();
-    createTodo(todoInput.current.value);
+
+    if (
+      !todoInput.current.value ||
+      !todoInput.current.value.trim() ||
+      todoInput.current.value.trim().length < 3
+    )
+      return;
+
+    createTodo(todoInput.current.value.trim());
     todoInput.current.value = "";
   };
 

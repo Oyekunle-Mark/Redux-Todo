@@ -19,6 +19,7 @@ const StyledTodo = styled.div`
   p {
     cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
   }
 
   button {
