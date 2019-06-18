@@ -10,6 +10,7 @@ function TodoForm({ createTodo }) {
   const submitTodo = e => {
     e.preventDefault();
     createTodo(todoInput.current.value);
+    todoInput.current.value = "";
   };
 
   return (

@@ -15,3 +15,8 @@ export const toggleCompleted = id => ({
   type: types.TOGGLE_COMPLETED,
   payload: id
 });
+
+export const deleteTodo = id => ({
+  type: types.DELETE_TODO,
+  payload: id
+});

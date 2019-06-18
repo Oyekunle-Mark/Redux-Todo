@@ -2,22 +2,24 @@ import React from "react";
 import { func, arrayOf, shape, string, bool } from "prop-types";
 import { connect } from "react-redux";
 
-import { toggleCompleted } from "../state/actionDispatchers";
+import { toggleCompleted, deleteTodo } from "../state/actionDispatchers";
 
-function Todos({ todos, toggleCompleted }) {
+function Todos({ todos, toggleCompleted, deleteTodo }) {
   if (!todos.length) return <p>todo is empty. Add one</p>;
 
   const todoList = todos.map(todo => {
     const style = todo.completed ? "line-through" : "none";
 
     return (
-      <p
-        onClick={() => toggleCompleted(todo.id)}
-        key={todo.id}
-        style={{ textDecoration: style }}
-      >
-        {todo.text}
-      </p>
+      <div key={todo.id}>
+        <p
+          onClick={() => toggleCompleted(todo.id)}
+          style={{ textDecoration: style }}
+        >
+          {todo.text}
+        </p>
+        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+      </div>
     );
   });
 
@@ -32,7 +34,8 @@ Todos.propTypes = {
       completed: bool.isRequired
     })
   ),
-  toggleCompleted: func.isRequired
+  toggleCompleted: func.isRequired,
+  deleteTodo: func.isRequired
 };
 
 Todos.defaultProps = {
@@ -45,5 +48,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { toggleCompleted }
+  { toggleCompleted, deleteTodo }
 )(Todos);

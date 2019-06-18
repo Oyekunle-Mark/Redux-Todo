@@ -19,13 +19,16 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/jsx-filename-extension": 0,
-    quotes: 0,
+    "quotes": 0,
     "comma-dangle": 0,
     "arrow-parens": 0,
     "no-underscore-dangle": 0,
     "no-shadow": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
-    "object-curly-newline": 0
+    "object-curly-newline": 0,
+    "curly": 0,
+    "nonblock-statement-body-position": 0,
+    "react/button-has-type": 0
   }
 };
