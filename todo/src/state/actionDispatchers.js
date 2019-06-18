@@ -1,16 +1,17 @@
+import { v4 } from "uuid";
+
 import types from "./actionTypes";
 
-export default function todosReducer(slice = [], action) {
-  switch (action.type) {
-    case types.ADD_TODO:
-      return [...slice, action.payload];
-    case types.TOGGLE_COMPLETED:
-      return slice.map(todo => {
-        if (todo.id === action.payload) return { ...todo, completed: true };
-
-        return todo;
-      });
-    default:
-      return slice;
+export const createTodo = value => ({
+  type: types.ADD_TODO,
+  payload: {
+    id: v4(),
+    value,
+    completed: false
   }
-}
+});
+
+export const toggleCompleted = id => ({
+  type: types.TOGGLE_COMPLETED,
+  payload: id
+});
