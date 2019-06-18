@@ -15,6 +15,8 @@ const StyledForm = styled.form`
   h3 {
     color: #f072a9;
     margin: 0 0 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
   }
 
   input {
