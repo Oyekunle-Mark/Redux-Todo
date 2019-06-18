@@ -2,11 +2,11 @@ import { v4 } from "uuid";
 
 import types from "./actionTypes";
 
-export const createTodo = value => ({
+export const createTodo = text => ({
   type: types.ADD_TODO,
   payload: {
     id: v4(),
-    value,
+    text,
     completed: false
   }
 });
